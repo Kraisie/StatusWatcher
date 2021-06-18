@@ -12,7 +12,9 @@ This bot runs on Java 11, so you need to install Java 11 in all cases.
 
 You will need a JSON product status API that includes each product as an object with a `name` and a `status` field as the bot
 will search for these fields. Any additional fields, objects and arrays do not matter. The `name` and `status`
-values need to be of type `String` (`"..."`). You need to restart the bot for changes in this file to take effect.
+values need to be of type `String` (`"..."`). You need to restart the bot for changes in this file to take effect. \
+If you really need to you can edit the `JsonAlias` value in [ProductStatus.java](src/main/java/com/motorbesitzen/statuswatcher/bot/scraper/entity/ProductStatus.java)
+to support even more APIs. Just make sure to always apply these changes after pulling any code updates of that file.
 
 <details><summary>Example of a supported API response</summary><p>
 

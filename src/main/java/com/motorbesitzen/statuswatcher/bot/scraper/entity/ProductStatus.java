@@ -8,6 +8,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class ProductStatus {
 
+	/*
+	 * You can edit the JsonAlias of the productName and the productStatus here if your API
+	 * does not use these names and you have no way of changing them.
+	 *
+	 * E.g: If your API has the product name as "prodName" you would need the following alias:
+	 * @JsonAlias("prodName")
+	 */
 	@JsonAlias("name")
 	private String productName;
 	@JsonAlias("status")
