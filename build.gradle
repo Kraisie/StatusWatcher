@@ -1,0 +1,52 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.motorbesitzen'
+version = '0.0.1'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://m2.dv8tion.net/releases'
+        name 'm2-dv8tion'
+    }
+    maven {
+        url 'https://dl.bintray.com/jagrosh/maven'
+    }
+}
+
+dependencies {
+    // development
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    // runtime
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'net.dv8tion:JDA:4.3.0_280'
+    implementation 'com.jagrosh:jda-utilities-commons:3.0.5'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+    runtimeOnly 'com.h2database:h2'
+
+    // test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+bootJar {
+    archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
+}
