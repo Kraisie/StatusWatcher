@@ -14,7 +14,7 @@ You will need a JSON product status API that includes each product as an object 
 will search for these fields. Any additional fields, objects and arrays do not matter. The `name` and `status`
 values need to be of type `String` (`"..."`). You need to restart the bot for changes in this file to take effect.
 
-<details><summary>Example of a supported API</summary><p>
+<details><summary>Example of a supported API response</summary><p>
 
 ```json
 {
@@ -92,6 +92,8 @@ The environment variables carry some information for the bot to use. To get your
 called `.env` in the same location where this file is located and add the following text to it:
 
 ```dotenv
+DB_USER=
+DB_PASSWORD=
 DC_TOKEN=
 CMD_PREFIX=
 PRODUCT_STATUS_API_URL=
