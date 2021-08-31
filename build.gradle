@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.5.1'
+    id 'org.springframework.boot' version '2.5.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -20,9 +20,7 @@ repositories {
         url 'https://m2.dv8tion.net/releases'
         name 'm2-dv8tion'
     }
-    maven {
-        url 'https://dl.bintray.com/jagrosh/maven'
-    }
+    jcenter()   // for JDA-Utilities, will shut down on feb 1st 2022
 }
 
 dependencies {
@@ -32,11 +30,11 @@ dependencies {
 
     // runtime
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'net.dv8tion:JDA:4.3.0_280'
+    implementation 'net.dv8tion:JDA:4.3.0_314'
     implementation 'com.jagrosh:jda-utilities-commons:3.0.5'
     implementation 'org.apache.httpcomponents:httpclient:4.5.13'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.3'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.12.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
     runtimeOnly 'com.h2database:h2'
 
     // test
